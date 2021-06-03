@@ -1,0 +1,5 @@
+work	"game_369.vhd"
+work	"lcd.vhd"
+work	"led.vhd"
+work	"timelimit_369.vhd"
+work	"totalgame.vhd"

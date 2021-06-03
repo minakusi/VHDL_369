@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -o "C:/Users/seoye/Xilinx/final_project/totalgame_TB_isim_beh.exe" -prj "C:/Users/seoye/Xilinx/final_project/totalgame_TB_beh.prj" "work.totalgame_TB" 

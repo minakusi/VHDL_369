@@ -1,0 +1,1050 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.19 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.19 secs
+ 
+--> Reading design: totalgame.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "totalgame.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "totalgame"
+Output Format                      : NGC
+Target Device                      : xc3s200-4-pq208
+
+---- Source Options
+Top Module Name                    : totalgame
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 8
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "C:/Users/seoye/Xilinx/final_project_5/game_369.vhd" in Library work.
+Architecture behavioral of Entity game_369 is up to date.
+Compiling vhdl file "C:/Users/seoye/Xilinx/final_project_5/timelimit_369.vhd" in Library work.
+Entity <timelimit_369> compiled.
+Entity <timelimit_369> (Architecture <behavioral>) compiled.
+Compiling vhdl file "C:/Users/seoye/Xilinx/final_project_5/led.vhd" in Library work.
+Architecture behavioral of Entity led is up to date.
+Compiling vhdl file "C:/Users/seoye/Xilinx/final_project_5/lcd.vhd" in Library work.
+Entity <lcd> compiled.
+Entity <lcd> (Architecture <behavioral>) compiled.
+Compiling vhdl file "C:/Users/seoye/Xilinx/final_project_5/totalgame.vhd" in Library work.
+Entity <totalgame> compiled.
+Entity <totalgame> (Architecture <behavioral>) compiled.
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for entity <totalgame> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <game_369> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <timelimit_369> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <led> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <lcd> in library <work> (architecture <behavioral>).
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing Entity <totalgame> in library <work> (Architecture <behavioral>).
+WARNING:Xst:819 - "C:/Users/seoye/Xilinx/final_project_5/totalgame.vhd" line 128: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+   <sit>, <num>
+Entity <totalgame> analyzed. Unit <totalgame> generated.
+
+Analyzing Entity <game_369> in library <work> (Architecture <behavioral>).
+WARNING:Xst:819 - "C:/Users/seoye/Xilinx/final_project_5/game_369.vhd" line 50: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+   <situation>
+Entity <game_369> analyzed. Unit <game_369> generated.
+
+Analyzing Entity <timelimit_369> in library <work> (Architecture <behavioral>).
+WARNING:Xst:819 - "C:/Users/seoye/Xilinx/final_project_5/timelimit_369.vhd" line 61: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+   <situation>
+Entity <timelimit_369> analyzed. Unit <timelimit_369> generated.
+
+Analyzing Entity <led> in library <work> (Architecture <behavioral>).
+Entity <led> analyzed. Unit <led> generated.
+
+Analyzing Entity <lcd> in library <work> (Architecture <behavioral>).
+WARNING:Xst:819 - "C:/Users/seoye/Xilinx/final_project_5/lcd.vhd" line 288: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+   <num_player>, <turn_cg>, <reg_cg>, <scor_cg>
+INFO:Xst:2679 - Register <smaller_numbers> in unit <lcd> has a constant value of 0 during circuit operation. The register is replaced by logic.
+Entity <lcd> analyzed. Unit <lcd> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <game_369>.
+    Related source file is "C:/Users/seoye/Xilinx/final_project_5/game_369.vhd".
+WARNING:Xst:647 - Input <CLK> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <load_operand1> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <load_operand2> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:737 - Found 1-bit latch for signal <state>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Using one-hot encoding for signal <quotient>.
+    Found 7-bit comparator less for signal <quotient$cmp_lt0000> created at line 40.
+    Found 8-bit comparator less for signal <quotient$cmp_lt0001> created at line 42.
+    Found 9-bit comparator less for signal <quotient$cmp_lt0002> created at line 42.
+    Found 10-bit comparator less for signal <quotient$cmp_lt0003> created at line 42.
+    Found 11-bit comparator less for signal <quotient$cmp_lt0004> created at line 42.
+    Found 12-bit comparator less for signal <quotient$cmp_lt0005> created at line 42.
+    Found 13-bit comparator less for signal <quotient$cmp_lt0006> created at line 42.
+    Found 14-bit comparator less for signal <quotient$cmp_lt0007> created at line 42.
+    Found 15-bit comparator less for signal <quotient$cmp_lt0008> created at line 42.
+    Found 16-bit comparator less for signal <quotient$cmp_lt0009> created at line 42.
+    Found 17-bit subtractor for signal <remainder$addsub0000> created at line 42.
+    Found 8-bit comparator less for signal <remainder$cmp_lt0000> created at line 42.
+    Found 9-bit comparator less for signal <remainder$cmp_lt0001> created at line 42.
+    Found 10-bit comparator less for signal <remainder$cmp_lt0002> created at line 42.
+    Found 11-bit comparator less for signal <remainder$cmp_lt0003> created at line 42.
+    Found 12-bit comparator less for signal <remainder$cmp_lt0004> created at line 42.
+    Found 13-bit comparator less for signal <remainder$cmp_lt0005> created at line 42.
+    Found 14-bit comparator less for signal <remainder$cmp_lt0006> created at line 42.
+    Found 15-bit comparator less for signal <remainder$cmp_lt0007> created at line 42.
+    Found 16-bit comparator less for signal <remainder$cmp_lt0008> created at line 42.
+    Found 8-bit subtractor for signal <sub0000$sub0000> created at line 42.
+    Found 9-bit subtractor for signal <sub0001$sub0000> created at line 42.
+    Found 10-bit subtractor for signal <sub0002$sub0000> created at line 42.
+    Found 11-bit subtractor for signal <sub0003$sub0000> created at line 42.
+    Found 12-bit subtractor for signal <sub0004$sub0000> created at line 42.
+    Found 13-bit subtractor for signal <sub0005$sub0000> created at line 42.
+    Found 14-bit subtractor for signal <sub0006$sub0000> created at line 42.
+    Found 15-bit subtractor for signal <sub0007$sub0000> created at line 42.
+    Found 16-bit subtractor for signal <sub0008$sub0000> created at line 42.
+    Summary:
+	inferred  10 Adder/Subtractor(s).
+	inferred  19 Comparator(s).
+Unit <game_369> synthesized.
+
+
+Synthesizing Unit <timelimit_369>.
+    Related source file is "C:/Users/seoye/Xilinx/final_project_5/timelimit_369.vhd".
+WARNING:Xst:1305 - Output <data_out> is never assigned. Tied to value 0.
+WARNING:Xst:1780 - Signal <s01_clk> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+    Found 2-bit register for signal <player>.
+    Found 2-bit register for signal <score_turn>.
+    Found 8-bit register for signal <data>.
+    Found 8-bit 4-to-1 multiplexer for signal <$varindex0000> created at line 106.
+    Found 8-bit 4-to-1 multiplexer for signal <$varindex0001> created at line 156.
+    Found 7-bit up counter for signal <cnt_369>.
+    Found 1-bit register for signal <cor>.
+    Found 20-bit up counter for signal <count_clk>.
+    Found 1-bit register for signal <half_clk>.
+    Found 32-bit register for signal <score_arr>.
+    Found 8-bit subtractor for signal <score_arr$addsub0000> created at line 107.
+    Found 8-bit subtractor for signal <score_arr$addsub0001> created at line 122.
+    Found 8-bit comparator greater for signal <score_arr$cmp_gt0000> created at line 106.
+    Found 8-bit comparator greater for signal <score_arr$cmp_gt0001> created at line 121.
+    Found 2-bit comparator greater for signal <score_arr_0$cmp_gt0000> created at line 96.
+    Found 2-bit comparator greater for signal <score_arr_0$cmp_gt0001> created at line 97.
+    Found 2-bit comparator greater for signal <score_arr_0$cmp_gt0002> created at line 100.
+    Found 2-bit comparator lessequal for signal <score_arr_0$cmp_le0000> created at line 100.
+    Found 8-bit adder for signal <score_arr_0$share0000> created at line 96.
+    Found 8-bit adder for signal <score_arr_1$share0000> created at line 96.
+    Found 8-bit adder for signal <score_arr_2$share0000> created at line 96.
+    Found 8-bit adder for signal <score_arr_3$share0000> created at line 96.
+    Found 2-bit register for signal <t>.
+    Found 2-bit subtractor for signal <t$addsub0000> created at line 136.
+    Found 2-bit register for signal <tur>.
+    Found 2-bit adder for signal <tur$addsub0000> created at line 153.
+    Found 3-bit comparator equal for signal <tur$cmp_eq0000> created at line 150.
+    Found 2-bit register for signal <turn>.
+    Found 2-bit subtractor for signal <turn$addsub0000> created at line 127.
+    Found 2-bit adder for signal <turn$addsub0001> created at line 130.
+    Found 2-bit comparator equal for signal <turn$cmp_eq0000> created at line 127.
+    Summary:
+	inferred   2 Counter(s).
+	inferred  52 D-type flip-flop(s).
+	inferred  10 Adder/Subtractor(s).
+	inferred   8 Comparator(s).
+	inferred  16 Multiplexer(s).
+Unit <timelimit_369> synthesized.
+
+
+Synthesizing Unit <led>.
+    Related source file is "C:/Users/seoye/Xilinx/final_project_5/led.vhd".
+WARNING:Xst:647 - Input <num_player> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 32x8-bit ROM for signal <seg>.
+    Found 6-bit register for signal <DIGIT>.
+    Found 8-bit register for signal <bin_to_hex_0>.
+    Found 5-bit register for signal <data>.
+    Found 5-bit 4-to-1 multiplexer for signal <data$mux0000>.
+    Found 6-bit 4-to-1 multiplexer for signal <DIGIT$mux0000>.
+    Found 8-bit up counter for signal <seg_clk_cnt>.
+    Found 3-bit up counter for signal <sel>.
+    Summary:
+	inferred   1 ROM(s).
+	inferred   2 Counter(s).
+	inferred  19 D-type flip-flop(s).
+	inferred  11 Multiplexer(s).
+Unit <led> synthesized.
+
+
+Synthesizing Unit <lcd>.
+    Related source file is "C:/Users/seoye/Xilinx/final_project_5/lcd.vhd".
+WARNING:Xst:647 - Input <PUSH3> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <load_plus> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <t> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <count_369> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <load_game> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <load_minus> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <PUSH1> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:1780 - Signal <max> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+    Found 4x6-bit ROM for signal <player$rom0000>.
+    Found 64x8-bit ROM for signal <lcd_db$mux0010>.
+WARNING:Xst:737 - Found 8-bit latch for signal <lcd_db>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+    Found 2-bit register for signal <winner>.
+    Found 1-bit register for signal <clk_100k>.
+    Found 1-bit register for signal <clk_50>.
+    Found 8-bit up counter for signal <cnt_100k>.
+    Found 12-bit up counter for signal <cnt_50>.
+    Found 32-bit register for signal <int_to_bin>.
+    Found 9-bit up counter for signal <lcd_cnt>.
+    Found 9-bit comparator greatequal for signal <lcd_cnt$cmp_ge0000> created at line 107.
+    Found 8-bit 3-to-1 multiplexer for signal <lcd_db$mux0011>.
+    Found 8-bit 4-to-1 multiplexer for signal <lcd_db$mux0012> created at line 464.
+    Found 8-bit 4-to-1 multiplexer for signal <lcd_db$mux0013> created at line 465.
+    Found 12-bit register for signal <rank>.
+    Found 2-bit adder carry out for signal <rank_0$addsub0003> created at line 225.
+    Found 2-bit adder carry out for signal <rank_0$addsub0004> created at line 236.
+    Found 2-bit adder carry out for signal <rank_0$addsub0005> created at line 246.
+    Found 2-bit adder carry out for signal <rank_1$addsub0003> created at line 225.
+    Found 2-bit adder carry out for signal <rank_1$addsub0004> created at line 236.
+    Found 2-bit adder carry out for signal <rank_1$addsub0005> created at line 246.
+    Found 2-bit adder carry out for signal <rank_2$addsub0002> created at line 236.
+    Found 2-bit adder carry out for signal <rank_2$addsub0003> created at line 246.
+    Found 2-bit adder carry out for signal <rank_3$addsub0000> created at line 246.
+    Found 160-bit register for signal <reg_cg>.
+    Found 64-bit register for signal <scor_cg>.
+    Found 8-bit 4-to-1 multiplexer for signal <scor_cg$mux0000> created at line 347.
+    Found 8-bit 4-to-1 multiplexer for signal <scor_cg$mux0001> created at line 348.
+    Found 8-bit 4-to-1 multiplexer for signal <scor_cg$mux0002> created at line 355.
+    Found 8-bit 4-to-1 multiplexer for signal <scor_cg$mux0003> created at line 356.
+    Found 8-bit 4-to-1 multiplexer for signal <scor_cg$mux0004> created at line 418.
+    Found 8-bit 4-to-1 multiplexer for signal <scor_cg$mux0005> created at line 419.
+    Found 2-bit comparator greatequal for signal <scor_cg_0$cmp_ge0000> created at line 137.
+    Found 4-bit comparator greatequal for signal <scor_cg_0$cmp_ge0001> created at line 162.
+    Found 8-bit adder for signal <scor_cg_0$mux0000> created at line 162.
+    Found 4-bit comparator greatequal for signal <scor_cg_1$cmp_ge0000> created at line 162.
+    Found 8-bit adder for signal <scor_cg_1$mux0000> created at line 162.
+    Found 4-bit comparator greatequal for signal <scor_cg_2$cmp_ge0000> created at line 162.
+    Found 8-bit adder for signal <scor_cg_2$mux0000> created at line 162.
+    Found 4-bit comparator greatequal for signal <scor_cg_3$cmp_ge0000> created at line 162.
+    Found 8-bit adder for signal <scor_cg_3$mux0000> created at line 162.
+    Found 4-bit comparator greatequal for signal <scor_cg_4$cmp_ge0000> created at line 154.
+    Found 8-bit adder for signal <scor_cg_4$mux0000> created at line 154.
+    Found 4-bit comparator greatequal for signal <scor_cg_5$cmp_ge0000> created at line 154.
+    Found 8-bit adder for signal <scor_cg_5$mux0000> created at line 154.
+    Found 4-bit comparator greatequal for signal <scor_cg_6$cmp_ge0000> created at line 146.
+    Found 2-bit comparator less for signal <scor_cg_6$cmp_lt0000> created at line 137.
+    Found 8-bit adder for signal <scor_cg_6$mux0001>.
+    Found 4-bit comparator greatequal for signal <scor_cg_7$cmp_ge0000> created at line 146.
+    Found 8-bit adder for signal <scor_cg_7$mux0001>.
+    Found 32-bit register for signal <score_arr>.
+    Found 2-bit adder for signal <smaller_numbers$add0001> created at line 243.
+    Found 2-bit adder for signal <smaller_numbers$addsub0000> created at line 233.
+    Found 2-bit adder for signal <smaller_numbers$addsub0001> created at line 233.
+    Found 2-bit adder for signal <smaller_numbers$addsub0002> created at line 243.
+    Found 2-bit adder for signal <smaller_numbers$addsub0003> created at line 243.
+    Found 2-bit adder for signal <smaller_numbers$addsub0004> created at line 233.
+    Found 2-bit adder for signal <smaller_numbers$addsub0005> created at line 243.
+    Found 2-bit adder for signal <smaller_numbers$addsub0006> created at line 243.
+    Found 2-bit adder for signal <smaller_numbers$addsub0007> created at line 243.
+    Found 8-bit comparator less for signal <smaller_numbers$cmp_lt0000> created at line 221.
+    Found 8-bit comparator less for signal <smaller_numbers$cmp_lt0001> created at line 221.
+    Found 8-bit comparator less for signal <smaller_numbers$cmp_lt0002> created at line 232.
+    Found 8-bit comparator less for signal <smaller_numbers$cmp_lt0003> created at line 232.
+    Found 8-bit comparator less for signal <smaller_numbers$cmp_lt0004> created at line 242.
+    Found 8-bit comparator less for signal <smaller_numbers$cmp_lt0005> created at line 232.
+    Found 8-bit comparator less for signal <smaller_numbers$cmp_lt0006> created at line 242.
+    Found 8-bit comparator less for signal <smaller_numbers$cmp_lt0007> created at line 232.
+    Found 8-bit comparator less for signal <smaller_numbers$cmp_lt0008> created at line 242.
+    Found 8-bit comparator less for signal <smaller_numbers$cmp_lt0009> created at line 242.
+    Found 8-bit comparator less for signal <smaller_numbers$cmp_lt0010> created at line 242.
+    Found 8-bit comparator less for signal <smaller_numbers$cmp_lt0011> created at line 242.
+    Found 8-bit register for signal <turn_arr>.
+    Found 32-bit register for signal <turn_cg>.
+    Found 8-bit adder for signal <turn_cg_0$add0000> created at line 213.
+    Found 8-bit adder for signal <turn_cg_1$add0000> created at line 213.
+    Found 8-bit adder for signal <turn_cg_2$add0000> created at line 213.
+    Found 8-bit adder for signal <turn_cg_3$add0000> created at line 213.
+    Found 8-bit comparator less for signal <w_enable_reg$cmp_lt0000> created at line 286.
+    Summary:
+	inferred   2 ROM(s).
+	inferred   3 Counter(s).
+	inferred  88 D-type flip-flop(s).
+	inferred  30 Adder/Subtractor(s).
+	inferred  24 Comparator(s).
+	inferred  72 Multiplexer(s).
+Unit <lcd> synthesized.
+
+
+Synthesizing Unit <totalgame>.
+    Related source file is "C:/Users/seoye/Xilinx/final_project_5/totalgame.vhd".
+WARNING:Xst:647 - Input <playernum<3>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:1780 - Signal <pn_test> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <num_player> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <data_out_reg> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <correct> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:737 - Found 2-bit latch for signal <sit>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 3-bit latch for signal <pn>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+Unit <totalgame> synthesized.
+
+INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# ROMs                                                 : 3
+ 32x8-bit ROM                                          : 1
+ 4x6-bit ROM                                           : 1
+ 64x8-bit ROM                                          : 1
+# Adders/Subtractors                                   : 50
+ 10-bit subtractor                                     : 1
+ 11-bit subtractor                                     : 1
+ 12-bit subtractor                                     : 1
+ 13-bit subtractor                                     : 1
+ 14-bit subtractor                                     : 1
+ 15-bit subtractor                                     : 1
+ 16-bit subtractor                                     : 1
+ 17-bit subtractor                                     : 1
+ 2-bit adder                                           : 11
+ 2-bit adder carry out                                 : 9
+ 2-bit subtractor                                      : 2
+ 8-bit adder                                           : 16
+ 8-bit subtractor                                      : 3
+ 9-bit subtractor                                      : 1
+# Counters                                             : 7
+ 12-bit up counter                                     : 1
+ 20-bit up counter                                     : 1
+ 3-bit up counter                                      : 1
+ 7-bit up counter                                      : 1
+ 8-bit up counter                                      : 2
+ 9-bit up counter                                      : 1
+# Registers                                            : 94
+ 1-bit register                                        : 36
+ 2-bit register                                        : 10
+ 3-bit register                                        : 4
+ 5-bit register                                        : 1
+ 6-bit register                                        : 1
+ 8-bit register                                        : 42
+# Latches                                              : 4
+ 1-bit latch                                           : 1
+ 2-bit latch                                           : 1
+ 3-bit latch                                           : 1
+ 8-bit latch                                           : 1
+# Comparators                                          : 51
+ 10-bit comparator less                                : 2
+ 11-bit comparator less                                : 2
+ 12-bit comparator less                                : 2
+ 13-bit comparator less                                : 2
+ 14-bit comparator less                                : 2
+ 15-bit comparator less                                : 2
+ 16-bit comparator less                                : 2
+ 2-bit comparator equal                                : 1
+ 2-bit comparator greatequal                           : 1
+ 2-bit comparator greater                              : 3
+ 2-bit comparator less                                 : 1
+ 2-bit comparator lessequal                            : 1
+ 3-bit comparator equal                                : 1
+ 4-bit comparator greatequal                           : 8
+ 7-bit comparator less                                 : 1
+ 8-bit comparator greater                              : 2
+ 8-bit comparator less                                 : 15
+ 9-bit comparator greatequal                           : 1
+ 9-bit comparator less                                 : 2
+# Multiplexers                                         : 13
+ 5-bit 4-to-1 multiplexer                              : 1
+ 6-bit 4-to-1 multiplexer                              : 1
+ 8-bit 3-to-1 multiplexer                              : 1
+ 8-bit 4-to-1 multiplexer                              : 10
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+INFO:Xst:2261 - The FF/Latch <tur_0> in Unit <timelimit369> is equivalent to the following FF/Latch, which will be removed : <score_turn_0> 
+INFO:Xst:2261 - The FF/Latch <tur_1> in Unit <timelimit369> is equivalent to the following FF/Latch, which will be removed : <score_turn_1> 
+WARNING:Xst:1710 - FF/Latch <bin_to_hex_0_7> (without init value) has a constant value of 0 in block <led_display>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2404 -  FFs/Latches <bin_to_hex_0<7:7>> (without init value) have a constant value of 0 in block <led>.
+
+Synthesizing (advanced) Unit <led>.
+INFO:Xst:3034 - In order to maximize performance and save block RAM resources, the small ROM <Mrom_seg> will be implemented on LUT. If you want to force its implementation on block, use option/constraint rom_style.
+Unit <led> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# ROMs                                                 : 3
+ 32x8-bit ROM                                          : 1
+ 4x6-bit ROM                                           : 1
+ 64x8-bit ROM                                          : 1
+# Adders/Subtractors                                   : 50
+ 10-bit subtractor                                     : 1
+ 11-bit subtractor                                     : 1
+ 12-bit subtractor                                     : 1
+ 13-bit subtractor                                     : 1
+ 14-bit subtractor                                     : 1
+ 15-bit subtractor                                     : 1
+ 16-bit subtractor                                     : 1
+ 17-bit subtractor                                     : 1
+ 2-bit adder                                           : 11
+ 2-bit adder carry out                                 : 9
+ 2-bit subtractor                                      : 2
+ 8-bit adder                                           : 16
+ 8-bit subtractor                                      : 3
+ 9-bit subtractor                                      : 1
+# Counters                                             : 7
+ 12-bit up counter                                     : 1
+ 20-bit up counter                                     : 1
+ 3-bit up counter                                      : 1
+ 7-bit up counter                                      : 1
+ 8-bit up counter                                      : 2
+ 9-bit up counter                                      : 1
+# Registers                                            : 414
+ Flip-Flops                                            : 414
+# Latches                                              : 4
+ 1-bit latch                                           : 1
+ 2-bit latch                                           : 1
+ 3-bit latch                                           : 1
+ 8-bit latch                                           : 1
+# Comparators                                          : 51
+ 10-bit comparator less                                : 2
+ 11-bit comparator less                                : 2
+ 12-bit comparator less                                : 2
+ 13-bit comparator less                                : 2
+ 14-bit comparator less                                : 2
+ 15-bit comparator less                                : 2
+ 16-bit comparator less                                : 2
+ 2-bit comparator equal                                : 1
+ 2-bit comparator greatequal                           : 1
+ 2-bit comparator greater                              : 3
+ 2-bit comparator less                                 : 1
+ 2-bit comparator lessequal                            : 1
+ 3-bit comparator equal                                : 1
+ 4-bit comparator greatequal                           : 8
+ 7-bit comparator less                                 : 1
+ 8-bit comparator greater                              : 2
+ 8-bit comparator less                                 : 15
+ 9-bit comparator greatequal                           : 1
+ 9-bit comparator less                                 : 2
+# Multiplexers                                         : 13
+ 5-bit 4-to-1 multiplexer                              : 1
+ 6-bit 4-to-1 multiplexer                              : 1
+ 8-bit 3-to-1 multiplexer                              : 1
+ 8-bit 4-to-1 multiplexer                              : 10
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+INFO:Xst:2261 - The FF/Latch <tur_0> in Unit <timelimit_369> is equivalent to the following FF/Latch, which will be removed : <score_turn_0> 
+INFO:Xst:2261 - The FF/Latch <tur_1> in Unit <timelimit_369> is equivalent to the following FF/Latch, which will be removed : <score_turn_1> 
+WARNING:Xst:1710 - FF/Latch <reg_cg_1_2> (without init value) has a constant value of 0 in block <lcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_cg_1_6> (without init value) has a constant value of 0 in block <lcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_cg_1_7> (without init value) has a constant value of 0 in block <lcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_cg_2_3> (without init value) has a constant value of 0 in block <lcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_cg_2_6> (without init value) has a constant value of 0 in block <lcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_cg_2_7> (without init value) has a constant value of 0 in block <lcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_cg_3_7> (without init value) has a constant value of 0 in block <lcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_cg_4_0> (without init value) has a constant value of 0 in block <lcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_cg_4_1> (without init value) has a constant value of 0 in block <lcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_cg_4_7> (without init value) has a constant value of 0 in block <lcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_cg_5_0> (without init value) has a constant value of 0 in block <lcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_cg_5_2> (without init value) has a constant value of 0 in block <lcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_cg_5_3> (without init value) has a constant value of 0 in block <lcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_cg_5_6> (without init value) has a constant value of 0 in block <lcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_cg_5_7> (without init value) has a constant value of 0 in block <lcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_cg_6_0> (without init value) has a constant value of 0 in block <lcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_cg_6_2> (without init value) has a constant value of 0 in block <lcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_cg_6_6> (without init value) has a constant value of 0 in block <lcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_cg_6_7> (without init value) has a constant value of 0 in block <lcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <scor_cg_0_7> (without init value) has a constant value of 0 in block <lcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_cg_10_2> (without init value) has a constant value of 0 in block <lcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <turn_cg_0_3> (without init value) has a constant value of 0 in block <lcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <turn_cg_0_5> (without init value) has a constant value of 1 in block <lcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <turn_cg_0_6> (without init value) has a constant value of 0 in block <lcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <turn_cg_0_7> (without init value) has a constant value of 0 in block <lcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <turn_cg_1_3> (without init value) has a constant value of 0 in block <lcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <turn_cg_1_5> (without init value) has a constant value of 1 in block <lcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <turn_cg_1_6> (without init value) has a constant value of 0 in block <lcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <turn_cg_1_7> (without init value) has a constant value of 0 in block <lcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <turn_cg_2_3> (without init value) has a constant value of 0 in block <lcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <turn_cg_2_5> (without init value) has a constant value of 1 in block <lcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <turn_cg_2_6> (without init value) has a constant value of 0 in block <lcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <turn_cg_2_7> (without init value) has a constant value of 0 in block <lcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <turn_cg_3_3> (without init value) has a constant value of 0 in block <lcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <turn_cg_3_5> (without init value) has a constant value of 1 in block <lcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <turn_cg_3_6> (without init value) has a constant value of 0 in block <lcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <turn_cg_3_7> (without init value) has a constant value of 0 in block <lcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_cg_0_1> (without init value) has a constant value of 0 in block <lcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_cg_0_2> (without init value) has a constant value of 0 in block <lcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_cg_0_3> (without init value) has a constant value of 0 in block <lcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_cg_0_6> (without init value) has a constant value of 0 in block <lcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_cg_0_7> (without init value) has a constant value of 0 in block <lcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_cg_1_0> (without init value) has a constant value of 0 in block <lcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_cg_14_0> (without init value) has a constant value of 0 in block <lcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_cg_14_1> (without init value) has a constant value of 0 in block <lcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_cg_14_7> (without init value) has a constant value of 0 in block <lcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <scor_cg_5_7> (without init value) has a constant value of 0 in block <lcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_cg_15_0> (without init value) has a constant value of 0 in block <lcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_cg_15_1> (without init value) has a constant value of 0 in block <lcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_cg_15_3> (without init value) has a constant value of 0 in block <lcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_cg_15_6> (without init value) has a constant value of 0 in block <lcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_cg_15_7> (without init value) has a constant value of 0 in block <lcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <scor_cg_6_7> (without init value) has a constant value of 0 in block <lcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_cg_16_0> (without init value) has a constant value of 0 in block <lcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_cg_16_2> (without init value) has a constant value of 0 in block <lcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_cg_16_6> (without init value) has a constant value of 0 in block <lcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_cg_16_7> (without init value) has a constant value of 0 in block <lcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <scor_cg_7_7> (without init value) has a constant value of 0 in block <lcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_cg_17_3> (without init value) has a constant value of 0 in block <lcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_cg_17_6> (without init value) has a constant value of 0 in block <lcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_cg_17_7> (without init value) has a constant value of 0 in block <lcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_cg_18_7> (without init value) has a constant value of 0 in block <lcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_cg_19_0> (without init value) has a constant value of 0 in block <lcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_cg_19_1> (without init value) has a constant value of 0 in block <lcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_cg_19_7> (without init value) has a constant value of 0 in block <lcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_cg_10_3> (without init value) has a constant value of 0 in block <lcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_cg_10_6> (without init value) has a constant value of 0 in block <lcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_cg_10_7> (without init value) has a constant value of 0 in block <lcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_cg_7_3> (without init value) has a constant value of 0 in block <lcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_cg_7_6> (without init value) has a constant value of 0 in block <lcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_cg_7_7> (without init value) has a constant value of 0 in block <lcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <scor_cg_1_7> (without init value) has a constant value of 0 in block <lcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_cg_11_0> (without init value) has a constant value of 0 in block <lcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_cg_11_2> (without init value) has a constant value of 0 in block <lcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_cg_11_6> (without init value) has a constant value of 0 in block <lcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_cg_11_7> (without init value) has a constant value of 0 in block <lcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_cg_8_7> (without init value) has a constant value of 0 in block <lcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <scor_cg_2_7> (without init value) has a constant value of 0 in block <lcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_cg_12_3> (without init value) has a constant value of 0 in block <lcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_cg_12_6> (without init value) has a constant value of 0 in block <lcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_cg_12_7> (without init value) has a constant value of 0 in block <lcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_cg_9_0> (without init value) has a constant value of 0 in block <lcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_cg_9_1> (without init value) has a constant value of 0 in block <lcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_cg_9_7> (without init value) has a constant value of 0 in block <lcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <scor_cg_3_7> (without init value) has a constant value of 0 in block <lcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_cg_13_7> (without init value) has a constant value of 0 in block <lcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <scor_cg_4_7> (without init value) has a constant value of 0 in block <lcd>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <turn_cg_3_4> in Unit <lcd> is equivalent to the following 3 FFs/Latches, which will be removed : <turn_cg_2_4> <turn_cg_1_4> <turn_cg_0_4> 
+
+Optimizing unit <totalgame> ...
+
+Optimizing unit <game_369> ...
+
+Optimizing unit <timelimit_369> ...
+
+Optimizing unit <led> ...
+
+Optimizing unit <lcd> ...
+WARNING:Xst:1710 - FF/Latch <reg_cg_17_5> (without init value) has a constant value of 1 in block <lcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_cg_16_5> (without init value) has a constant value of 1 in block <lcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_cg_15_5> (without init value) has a constant value of 1 in block <lcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_cg_12_5> (without init value) has a constant value of 1 in block <lcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_cg_11_5> (without init value) has a constant value of 1 in block <lcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_cg_7_5> (without init value) has a constant value of 1 in block <lcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_cg_10_5> (without init value) has a constant value of 1 in block <lcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_cg_6_5> (without init value) has a constant value of 1 in block <lcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_cg_5_5> (without init value) has a constant value of 1 in block <lcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_cg_2_5> (without init value) has a constant value of 1 in block <lcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_cg_1_5> (without init value) has a constant value of 1 in block <lcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_cg_0_5> (without init value) has a constant value of 1 in block <lcd>. This FF/Latch will be trimmed during the optimization process.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block totalgame, actual ratio is 41.
+FlipFlop timelimit369/t_0 has been replicated 1 time(s)
+FlipFlop timelimit369/t_1 has been replicated 1 time(s)
+FlipFlop timelimit369/turn_0 has been replicated 1 time(s)
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 380
+ Flip-Flops                                            : 380
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : totalgame.ngr
+Top Level Output File Name         : totalgame
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 36
+
+Cell Usage :
+# BELS                             : 1965
+#      GND                         : 1
+#      INV                         : 68
+#      LUT1                        : 80
+#      LUT2                        : 171
+#      LUT2_D                      : 1
+#      LUT2_L                      : 7
+#      LUT3                        : 331
+#      LUT3_D                      : 5
+#      LUT3_L                      : 10
+#      LUT4                        : 630
+#      LUT4_D                      : 13
+#      LUT4_L                      : 15
+#      MUXCY                       : 268
+#      MUXF5                       : 210
+#      MUXF6                       : 7
+#      VCC                         : 1
+#      XORCY                       : 147
+# FlipFlops/Latches                : 394
+#      FDC                         : 57
+#      FDCE                        : 237
+#      FDE                         : 64
+#      FDPE                        : 22
+#      LD                          : 8
+#      LDC                         : 1
+#      LDCE_1                      : 2
+#      LDCP                        : 1
+#      LDP                         : 1
+#      LDPE_1                      : 1
+# Clock Buffers                    : 2
+#      BUFG                        : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 32
+#      IBUF                        : 7
+#      OBUF                        : 25
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s200pq208-4 
+
+ Number of Slices:                      713  out of   1920    37%  
+ Number of Slice Flip Flops:            383  out of   3840     9%  
+ Number of 4 input LUTs:               1331  out of   3840    34%  
+ Number of IOs:                          36
+ Number of bonded IOBs:                  33  out of    141    23%  
+    IOB Flip Flops:                      11
+ Number of GCLKs:                         2  out of      8    25%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+----------------------------------------------------------+------------------------------+-------+
+Clock Signal                                              | Clock buffer(FF name)        | Load  |
+----------------------------------------------------------+------------------------------+-------+
+lcd_display/scor_cg_0_cmp_ge0000(pn_not00011:O)           | NONE(*)(pn_0)                | 3     |
+sit_cmp_eq0000(sit_cmp_eq0000:O)                          | NONE(*)(sit_0)               | 2     |
+game369/state_cmp_eq0000(timelimit369/cnt_369_and000021:O)| NONE(*)(game369/state)       | 1     |
+FPGA_CLK                                                  | BUFGP                        | 311   |
+timelimit369/half_clk1                                    | BUFG                         | 47    |
+lcd_display/lcd_db_not0001(lcd_display/lcd_db_not00011:O) | NONE(*)(lcd_display/lcd_db_7)| 8     |
+lcd_display/clk_50                                        | NONE(lcd_display/lcd_cnt_8)  | 9     |
+lcd_display/clk_100k                                      | NONE(lcd_display/cnt_50_11)  | 13    |
+----------------------------------------------------------+------------------------------+-------+
+(*) These 4 clock signal(s) are generated by combinatorial logic,
+and XST is not able to identify which are the primary clock signals.
+Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+------------------------------------------------------------+------------------------+-------+
+Control Signal                                              | Buffer(FF name)        | Load  |
+------------------------------------------------------------+------------------------+-------+
+game369/state_0_not0000(timelimit369/FPGA_RSTB_inv1_INV_0:O)| NONE(game369/state)    | 321   |
+sit_0_0_not0001(sit_and00001:O)                             | NONE(sit_0)            | 1     |
+sit_1_0_not0000(sit_1_0_not00001:O)                         | NONE(sit_1)            | 1     |
+------------------------------------------------------------+------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: 9.367ns (Maximum Frequency: 106.758MHz)
+   Minimum input arrival time before clock: 11.572ns
+   Maximum output required time after clock: 12.096ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'FPGA_CLK'
+  Clock period: 7.690ns (frequency: 130.039MHz)
+  Total number of paths / destination ports: 2720 / 340
+-------------------------------------------------------------------------
+Delay:               7.690ns (Levels of Logic = 3)
+  Source:            lcd_display/rank_1_1 (FF)
+  Destination:       lcd_display/winner_1 (FF)
+  Source Clock:      FPGA_CLK rising
+  Destination Clock: FPGA_CLK rising
+
+  Data Path: lcd_display/rank_1_1 to lcd_display/winner_1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q            22   0.720   1.939  lcd_display/rank_1_1 (lcd_display/rank_1_1)
+     LUT3:I0->O            2   0.551   1.072  lcd_display/reg_cg_8_mux0000<7>11 (lcd_display/N99)
+     LUT4:I1->O            1   0.551   0.827  lcd_display/winner_and0000_SW1 (N420)
+     LUT4:I3->O            2   0.551   0.877  lcd_display/winner_and0000 (lcd_display/winner_and0000)
+     FDE:CE                    0.602          lcd_display/winner_0
+    ----------------------------------------
+    Total                      7.690ns (2.975ns logic, 4.715ns route)
+                                       (38.7% logic, 61.3% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'timelimit369/half_clk1'
+  Clock period: 9.367ns (frequency: 106.758MHz)
+  Total number of paths / destination ports: 4976 / 89
+-------------------------------------------------------------------------
+Delay:               9.367ns (Levels of Logic = 4)
+  Source:            timelimit369/cnt_369_3 (FF)
+  Destination:       timelimit369/score_arr_2_7 (FF)
+  Source Clock:      timelimit369/half_clk1 rising
+  Destination Clock: timelimit369/half_clk1 rising
+
+  Data Path: timelimit369/cnt_369_3 to timelimit369/score_arr_2_7
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q            22   0.720   1.939  timelimit369/cnt_369_3 (timelimit369/cnt_369_3)
+     LUT4:I0->O            1   0.551   0.869  timelimit369/score_arr_0_or0001231_SW0 (N234)
+     LUT4:I2->O            3   0.551   0.975  timelimit369/score_arr_0_or0001231 (timelimit369/cnt_369_not0001_inv)
+     LUT3_D:I2->O          3   0.551   0.975  timelimit369/score_arr_0_and00001 (timelimit369/N29)
+     LUT3:I2->O            8   0.551   1.083  timelimit369/score_arr_2_and00001 (timelimit369/score_arr_2_and0000)
+     FDCE:CE                   0.602          timelimit369/score_arr_2_0
+    ----------------------------------------
+    Total                      9.367ns (3.526ns logic, 5.841ns route)
+                                       (37.6% logic, 62.4% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'lcd_display/clk_50'
+  Clock period: 8.338ns (frequency: 119.933MHz)
+  Total number of paths / destination ports: 454 / 9
+-------------------------------------------------------------------------
+Delay:               8.338ns (Levels of Logic = 5)
+  Source:            lcd_display/lcd_cnt_7 (FF)
+  Destination:       lcd_display/lcd_cnt_8 (FF)
+  Source Clock:      lcd_display/clk_50 rising
+  Destination Clock: lcd_display/clk_50 rising
+
+  Data Path: lcd_display/lcd_cnt_7 to lcd_display/lcd_cnt_8
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q             23   0.720   2.040  lcd_display/lcd_cnt_7 (lcd_display/lcd_cnt_7)
+     LUT2_D:I0->O          3   0.551   1.246  lcd_display/LCD_A_0_mux000011 (lcd_display/lcd_db_and0000)
+     LUT4:I0->O            2   0.551   1.072  lcd_display/lcd_cnt_cmp_ge00001 (lcd_display/lcd_cnt_cmp_ge0000)
+     LUT2:I1->O            1   0.551   0.000  lcd_display/Mcount_lcd_cnt_lut<7> (lcd_display/Mcount_lcd_cnt_lut<7>)
+     MUXCY:S->O            0   0.500   0.000  lcd_display/Mcount_lcd_cnt_cy<7> (lcd_display/Mcount_lcd_cnt_cy<7>)
+     XORCY:CI->O           1   0.904   0.000  lcd_display/Mcount_lcd_cnt_xor<8> (lcd_display/Mcount_lcd_cnt8)
+     FDC:D                     0.203          lcd_display/lcd_cnt_8
+    ----------------------------------------
+    Total                      8.338ns (3.980ns logic, 4.358ns route)
+                                       (47.7% logic, 52.3% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'lcd_display/clk_100k'
+  Clock period: 6.361ns (frequency: 157.208MHz)
+  Total number of paths / destination ports: 235 / 14
+-------------------------------------------------------------------------
+Delay:               6.361ns (Levels of Logic = 13)
+  Source:            lcd_display/cnt_50_1 (FF)
+  Destination:       lcd_display/cnt_50_11 (FF)
+  Source Clock:      lcd_display/clk_100k rising
+  Destination Clock: lcd_display/clk_100k rising
+
+  Data Path: lcd_display/cnt_50_1 to lcd_display/cnt_50_11
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              2   0.720   1.216  lcd_display/cnt_50_1 (lcd_display/cnt_50_1)
+     LUT1:I0->O            1   0.551   0.000  lcd_display/Mcount_cnt_50_cy<1>_rt (lcd_display/Mcount_cnt_50_cy<1>_rt)
+     MUXCY:S->O            1   0.500   0.000  lcd_display/Mcount_cnt_50_cy<1> (lcd_display/Mcount_cnt_50_cy<1>)
+     MUXCY:CI->O           1   0.064   0.000  lcd_display/Mcount_cnt_50_cy<2> (lcd_display/Mcount_cnt_50_cy<2>)
+     MUXCY:CI->O           1   0.064   0.000  lcd_display/Mcount_cnt_50_cy<3> (lcd_display/Mcount_cnt_50_cy<3>)
+     MUXCY:CI->O           1   0.064   0.000  lcd_display/Mcount_cnt_50_cy<4> (lcd_display/Mcount_cnt_50_cy<4>)
+     MUXCY:CI->O           1   0.064   0.000  lcd_display/Mcount_cnt_50_cy<5> (lcd_display/Mcount_cnt_50_cy<5>)
+     MUXCY:CI->O           1   0.064   0.000  lcd_display/Mcount_cnt_50_cy<6> (lcd_display/Mcount_cnt_50_cy<6>)
+     MUXCY:CI->O           1   0.064   0.000  lcd_display/Mcount_cnt_50_cy<7> (lcd_display/Mcount_cnt_50_cy<7>)
+     MUXCY:CI->O           1   0.064   0.000  lcd_display/Mcount_cnt_50_cy<8> (lcd_display/Mcount_cnt_50_cy<8>)
+     MUXCY:CI->O           1   0.064   0.000  lcd_display/Mcount_cnt_50_cy<9> (lcd_display/Mcount_cnt_50_cy<9>)
+     MUXCY:CI->O           0   0.064   0.000  lcd_display/Mcount_cnt_50_cy<10> (lcd_display/Mcount_cnt_50_cy<10>)
+     XORCY:CI->O           1   0.904   1.140  lcd_display/Mcount_cnt_50_xor<11> (lcd_display/Result<11>)
+     LUT2:I0->O            1   0.551   0.000  lcd_display/Mcount_cnt_50_eqn_111 (lcd_display/Mcount_cnt_50_eqn_11)
+     FDC:D                     0.203          lcd_display/cnt_50_11
+    ----------------------------------------
+    Total                      6.361ns (4.005ns logic, 2.356ns route)
+                                       (63.0% logic, 37.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'lcd_display/scor_cg_0_cmp_ge0000'
+  Total number of paths / destination ports: 6 / 6
+-------------------------------------------------------------------------
+Offset:              3.788ns (Levels of Logic = 2)
+  Source:            load_game (PAD)
+  Destination:       pn_0 (LATCH)
+  Destination Clock: lcd_display/scor_cg_0_cmp_ge0000 rising
+
+  Data Path: load_game to pn_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             3   0.821   0.907  load_game_IBUF (load_game_IBUF)
+     INV:I->O              3   0.551   0.907  pn_0_0_not00011_INV_0 (pn_0_0_not0001)
+     LDCE_1:GE                 0.602          pn_0
+    ----------------------------------------
+    Total                      3.788ns (1.974ns logic, 1.814ns route)
+                                       (52.1% logic, 47.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'timelimit369/half_clk1'
+  Total number of paths / destination ports: 503 / 80
+-------------------------------------------------------------------------
+Offset:              11.572ns (Levels of Logic = 7)
+  Source:            load_operand1 (PAD)
+  Destination:       timelimit369/score_arr_3_0 (FF)
+  Destination Clock: timelimit369/half_clk1 rising
+
+  Data Path: load_operand1 to timelimit369/score_arr_3_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            16   0.821   1.576  load_operand1_IBUF (load_operand1_IBUF)
+     LUT2:I0->O           28   0.551   2.169  timelimit369/score_arr_0_or00001 (timelimit369/score_arr_0_or0000)
+     LUT4_D:I0->O         59   0.551   2.034  timelimit369/score_arr_0_mux0000<0>31 (timelimit369/N25)
+     LUT4:I3->O            1   0.551   0.000  timelimit369/score_arr_0_mux0000<0>2_SW0_SW1_G (N271)
+     MUXF5:I1->O           1   0.360   0.827  timelimit369/score_arr_0_mux0000<0>2_SW0_SW1 (N239)
+     LUT4:I3->O            1   0.551   0.827  timelimit369/score_arr_0_mux0000<0>2_SW2 (N140)
+     LUT4:I3->O            1   0.551   0.000  timelimit369/score_arr_3_mux0000<0>1 (timelimit369/score_arr_3_mux0000<0>)
+     FDCE:D                    0.203          timelimit369/score_arr_3_0
+    ----------------------------------------
+    Total                     11.572ns (4.139ns logic, 7.433ns route)
+                                       (35.8% logic, 64.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'FPGA_CLK'
+  Total number of paths / destination ports: 64 / 64
+-------------------------------------------------------------------------
+Offset:              5.847ns (Levels of Logic = 2)
+  Source:            FPGA_RSTB (PAD)
+  Destination:       lcd_display/int_to_bin_29 (FF)
+  Destination Clock: FPGA_CLK rising
+
+  Data Path: FPGA_RSTB to lcd_display/int_to_bin_29
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            27   0.821   2.019  FPGA_RSTB_IBUF (FPGA_RSTB_IBUF)
+     LUT3:I1->O           32   0.551   1.853  lcd_display/int_to_bin_0_and00001 (lcd_display/int_to_bin_0_and0000)
+     FDE:CE                    0.602          lcd_display/int_to_bin_2
+    ----------------------------------------
+    Total                      5.847ns (1.974ns logic, 3.873ns route)
+                                       (33.8% logic, 66.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'lcd_display/clk_50'
+  Total number of paths / destination ports: 9 / 2
+-------------------------------------------------------------------------
+Offset:              12.096ns (Levels of Logic = 3)
+  Source:            lcd_display/lcd_cnt_3 (FF)
+  Destination:       LCD_A<0> (PAD)
+  Source Clock:      lcd_display/clk_50 rising
+
+  Data Path: lcd_display/lcd_cnt_3 to LCD_A<0>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q            123   0.720   2.569  lcd_display/lcd_cnt_3 (lcd_display/lcd_cnt_3)
+     LUT2:I1->O            5   0.551   1.260  lcd_display/lcd_db_mux0014<6>1211 (lcd_display/N113)
+     LUT4:I0->O            1   0.551   0.801  lcd_display/LCD_A_0_mux0000 (LCD_A_0_OBUF)
+     OBUF:I->O                 5.644          LCD_A_0_OBUF (LCD_A<0>)
+    ----------------------------------------
+    Total                     12.096ns (7.466ns logic, 4.630ns route)
+                                       (61.7% logic, 38.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'FPGA_CLK'
+  Total number of paths / destination ports: 67 / 13
+-------------------------------------------------------------------------
+Offset:              9.760ns (Levels of Logic = 3)
+  Source:            led_display/data_4 (FF)
+  Destination:       SEG_A (PAD)
+  Source Clock:      FPGA_CLK rising
+
+  Data Path: led_display/data_4 to SEG_A
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q             17   0.720   1.684  led_display/data_4 (led_display/data_4)
+     LUT4:I0->O            1   0.551   0.000  led_display/Mrom_seg4_F (N540)
+     MUXF5:I0->O           1   0.360   0.801  led_display/Mrom_seg4 (SEG_E_OBUF)
+     OBUF:I->O                 5.644          SEG_E_OBUF (SEG_E)
+    ----------------------------------------
+    Total                      9.760ns (7.275ns logic, 2.485ns route)
+                                       (74.5% logic, 25.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'lcd_display/lcd_db_not0001'
+  Total number of paths / destination ports: 8 / 8
+-------------------------------------------------------------------------
+Offset:              7.078ns (Levels of Logic = 1)
+  Source:            lcd_display/lcd_db_7 (LATCH)
+  Destination:       LCD_D<7> (PAD)
+  Source Clock:      lcd_display/lcd_db_not0001 falling
+
+  Data Path: lcd_display/lcd_db_7 to LCD_D<7>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LD:G->Q               1   0.633   0.801  lcd_display/lcd_db_7 (lcd_display/lcd_db_7)
+     OBUF:I->O                 5.644          LCD_D_7_OBUF (LCD_D<7>)
+    ----------------------------------------
+    Total                      7.078ns (6.277ns logic, 0.801ns route)
+                                       (88.7% logic, 11.3% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 15.00 secs
+Total CPU time to Xst completion: 15.40 secs
+ 
+--> 
+
+Total memory usage is 4547036 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :  128 (   0 filtered)
+Number of infos    :   10 (   0 filtered)
+

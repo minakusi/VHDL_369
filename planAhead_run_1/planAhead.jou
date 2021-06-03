@@ -1,0 +1,22 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7
+# Build 321239 by xbuild on Fri Sep 27 19:31:35 MDT 2013
+# Start of session at: Tue May 25 18:29:45 2021
+# Process ID: 26360
+# Log file: C:/Users/seoye/Xilinx/final_project/planAhead_run_1/planAhead.log
+# Journal file: C:/Users/seoye/Xilinx/final_project/planAhead_run_1/planAhead.jou
+#-----------------------------------------------------------
+start_gui
+source C:/Users/seoye/Xilinx/final_project/pa.fromHdl.tcl
+update_compile_order -fileset sim_1
+startgroup
+set_property package_pin P20 [get_ports load_game]
+endgroup
+save_constraints
+startgroup
+set_property package_pin P100 [get_ports load_operand2]
+endgroup
+startgroup
+set_property package_pin P19 [get_ports load_minus]
+endgroup
+save_constraints
