@@ -11,7 +11,7 @@ Port (
       clk : in std_logic;  
       t : in integer range 0 to 3;                   -- 서연 코드에서 옴
       num_player : in integer range 2 to 4;        -- player 수 값을 받아온다. 
-      count_369 : in integer range 1 to 100;       -- 규리 코드에서 옴
+      count_369 : in integer range 0 to 100;       -- 규리 코드에서 옴
       
       DIGIT : out std_logic_vector( 6 downto 1 ); --출력하려는 숫자
       SEG_A : out std_logic;                      --7segment
@@ -64,32 +64,57 @@ begin
             bin_to_hex_0 <= std_logic_vector(to_unsigned(count_369, 8));
             case sel is       
                when "000" =>                            --369숫자 10의자리
-                  DIGIT <= "000001";                
-                  data <= '0' & bin_to_hex_0(7 downto 4);         
+                  DIGIT <= "000001";
+                  if count_369 = 0 and t = 3 then
+                     data <= "00011";
+                  elsif count_369 = 0 and t < 3 then
+                     data <= "11000";
+                  else               
+                     data <= '0' & bin_to_hex_0(7 downto 4);         
+                  end if;
                when "001" =>                            --369숫자 1의자리
-                  DIGIT <= "000010";               
-                  data <= '0' & bin_to_hex_0(3 downto 0);                
-               when "010" =>                            --공백
-                  DIGIT <= "000100";               
-                  data <= "11000";
-               when "011" =>                            
-                  if(t = 3) then
-                     DIGIT <= "001000";                    
-                     data <= "10000";
+                  DIGIT <= "000010"; 
+                  if count_369 = 0 then
+                     data <= "11000";
                   else
-                     DIGIT <= "001000";                   
+                     data <= '0' & bin_to_hex_0(3 downto 0);     
+                  end if;
+               when "010" =>                            --공백
+                  DIGIT <= "000100";   
+                  if count_369 = 0 and t = 2 then
+                     data <= "00010";
+                  else
                      data <= "11000";
                   end if;
-               when "100" =>                            
-                  if(t = 3 or t = 2) then
+               when "011" =>
+                  DIGIT <= "001000";
+                  if count_369 = 0 then
+                     data <= "11000";
+                  elsif(t = 3) then
+                     --DIGIT <= "001000";                    
+                     data <= "10000";
+                  else
+                     --DIGIT <= "001000";                   
+                     data <= "11000";
+                  end if;
+               when "100" =>   
+                  if count_369 = 0 and t = 1 then
+                     DIGIT <= "010000";                    
+                     data <= "00001";
+                     
+                  elsif(t = 3 or t = 2) then
                      DIGIT <= "010000";                
                      data <= "10000";
                   else
                      DIGIT <= "001000";                   
                      data <= "11000";
                   end if;
-               when "101" =>                            
-                  if(t = 1 or t = 2 or t = 3) then
+               when "101" =>  
+                  if count_369 = 0 then
+                     DIGIT <= "100000";                    
+                     data <= "11000";
+                     
+                  elsif(t = 1 or t = 2 or t = 3) then
                      DIGIT <= "100000";               
                      data <= "10000";    
                   else
