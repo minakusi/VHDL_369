@@ -7,18 +7,16 @@ use ieee.numeric_std.all;
 
 entity lcd is
    port ( 
-		score_turn: IN integer range 0 to 3;
-         winner : out integer range 0 to 3;
-         w_enable : out std_logic;
+		score_turn: IN integer range 0 to 3;			-- 점수 실시간 업데이트 위해
+      winner : out integer range 0 to 3;
+      w_enable : out std_logic;
 
       PUSH1 : in std_logic;
       PUSH3 : in std_logic;
       FPGA_RSTB : IN std_logic;                    -- Reset
       FPGA_CLK : IN std_logic;                     -- FPFA clock
-      load_plus : in std_logic;                    -- + button
-      load_minus : in std_logic;                   -- - button
       load_game : in std_logic;                    -- game start button (PUSH3)
-      count_369: in integer range 1 to 100;          -- 369 숫자 
+      count_369: in integer range 0 to 100;          -- 369 숫자 
       num_player : in integer range 2 to 4;         -- player 수
       t : in integer range 0 to 3;
       player : in integer range 0 to 3;            -- 현재 player (서연 코드)
@@ -97,7 +95,7 @@ architecture Behavioral of lcd is
             end if;
          end if;
       end process;
-      load_50 <= '1' when (cnt_50 = X"40") else '0'; -- clk count 999번 이후 50 Hz
+      load_50 <= '1' when (cnt_50 = X"40") else '0'; -- clk count 64번 이후 50 Hz
    
       process(FPGA_RSTB,clk_50,lcd_cnt)
       begin
@@ -135,7 +133,7 @@ architecture Behavioral of lcd is
          
       elsif (FPGA_clk'event and FPGA_clk='1') then
          if situation >= "01" then
-            score_arr(score_turn) <= data;                                 -- 한 player game할 때마다 score array 갱신됨
+            score_arr(score_turn) <= data;                             -- FPGA_CLK rising edge마다 score array 갱신됨
                      
             for i in 0 to 3 loop                                       -- integer score를 binary로 나타내기
                int_to_bin(8*i to 8*i+7)<= std_logic_vector(to_unsigned(score_arr(i), 8));
@@ -168,9 +166,11 @@ architecture Behavioral of lcd is
             end if;
 
             
-            if (situation = "01") then
+            if (situation = "01") then	
                turn_arr(0) <= player;                                  -- 현재 player num 받아서 turn arr 채움
-               if num_player = 2 then
+               
+					-- player 수에 따라 나머지 turn arr 채움
+					if num_player = 2 then
                   if player = 0 then
                      turn_arr(1) <= 1;
                   else
@@ -209,13 +209,14 @@ architecture Behavioral of lcd is
                   end if;
                end if;
                
-               for i in 0 to 3 loop 
+               for i in 0 to 3 loop -- turn을 ascii화 한 것 저장
                   turn_cg(i) <= std_logic_vector(to_unsigned(turn_arr(i), 8)) + X"31";
                end loop;
                   
                
             elsif (situation = "10") then                  -- game over
-               if num_player = 2 then                       -- get rank
+               -- player 수에 따라 순위 매겨 rank array에 넣기
+					if num_player = 2 then                       
                   for i in 0 to 1 loop                       
                      for j in 0 to 1 loop            
                         if score_arr(i) < score_arr(j) then
@@ -235,7 +236,8 @@ architecture Behavioral of lcd is
                      end loop;
                      rank(i) <= smaller_numbers + 1;
                      smaller_numbers := 0;
-                  end loop;   
+                  end loop;
+						
                else
                   for i in 0 to 3 loop                      
                      for j in 0 to 3 loop            
@@ -247,10 +249,11 @@ architecture Behavioral of lcd is
                      smaller_numbers := 0;
                   end loop;
                end if;
-   
+					
+					-- rank array ascii화해서 넣기
                for i in 0 to 3 loop
                   if rank(i) = 1 then
-                     winner <= i;
+                     winner <= i; -- led로 넘겨줄 1등 플레이어
                      reg_cg(i * 5) <= std_logic_vector(to_unsigned(i, 8)) + X"31";
                      reg_cg(i * 5 + 1) <= X"3A";      -- :
                      reg_cg(i * 5 + 2) <= X"31";      -- 1

@@ -61,70 +61,64 @@ begin
 
       
          elsif situation  = "01" then                                                -- 게임 시작 후 time이 변한 경우
-            bin_to_hex_0 <= std_logic_vector(to_unsigned(count_369, 8));
+            bin_to_hex_0 <= std_logic_vector(to_unsigned(count_369, 8));				 -- 숫자를 16진수로
             case sel is       
                when "000" =>                            --369숫자 10의자리
                   DIGIT <= "000001";
-                  if count_369 = 0 and t = 3 then
+                  if count_369 = 0 and t = 3 then		  -- 준비 중 일때
                      data <= "00011";
                   elsif count_369 = 0 and t < 3 then
                      data <= "11000";
-                  else               
+                  else               						  -- 게임 진짜 시작
                      data <= '0' & bin_to_hex_0(7 downto 4);         
                   end if;
                when "001" =>                            --369숫자 1의자리
                   DIGIT <= "000010"; 
-                  if count_369 = 0 then
+                  if count_369 = 0 then					  -- 준비 중 일때
                      data <= "11000";
-                  else
+                  else											  -- 게임 진짜 시작
                      data <= '0' & bin_to_hex_0(3 downto 0);     
                   end if;
                when "010" =>                            --공백
                   DIGIT <= "000100";   
-                  if count_369 = 0 and t = 2 then
+                  if count_369 = 0 and t = 2 then		  -- 준비 중 일때
                      data <= "00010";
-                  else
+                  else											  -- 게임 진짜 시작
                      data <= "11000";
                   end if;
                when "011" =>
                   DIGIT <= "001000";
-                  if count_369 = 0 then
+                  if count_369 = 0 then					  -- 준비 중 일때
                      data <= "11000";
-                  elsif(t = 3) then
-                     --DIGIT <= "001000";                    
+                  elsif(t = 3) then                     -- 게임 진짜 시작 후 남은 제한 시간 표시
                      data <= "10000";
-                  else
-                     --DIGIT <= "001000";                   
+                  else                   
                      data <= "11000";
                   end if;
-               when "100" =>   
-                  if count_369 = 0 and t = 1 then
-                     DIGIT <= "010000";                    
+               when "100" =>
+						DIGIT <= "010000";
+                  if count_369 = 0 and t = 1 then		  -- 준비 중 일때                   
                      data <= "00001";
                      
-                  elsif(t = 3 or t = 2) then
-                     DIGIT <= "010000";                
+                  elsif(t = 3 or t = 2) then            -- 게임 진짜 시작 후 남은 제한 시간 표시               
                      data <= "10000";
-                  else
-                     DIGIT <= "001000";                   
+                  else                  
                      data <= "11000";
                   end if;
                when "101" =>  
-                  if count_369 = 0 then
-                     DIGIT <= "100000";                    
+						DIGIT <= "100000";
+                  if count_369 = 0 then					  -- 준비 중 일때                    
                      data <= "11000";
                      
-                  elsif(t = 1 or t = 2 or t = 3) then
-                     DIGIT <= "100000";               
+                  elsif(t = 1 or t = 2 or t = 3) then   -- 게임 진짜 시작 후 남은 제한 시간 표시          
                      data <= "10000";    
-                  else
-                     DIGIT <= "001000";                   
+                  else               
                      data <= "11000";   
                   end if;
                when others => null; 
             end case;
             
-         elsif situation = "10" then
+         elsif situation = "10" then	 -- 게임 오버
             case sel is
                when "000" =>
                   DIGIT <= "000001";   
@@ -141,7 +135,7 @@ begin
                when "100" => 
                   DIGIT <= "010000";   
                   if winner = 0 then
-                     data <= "00001";      --(player number)
+                     data <= "00001";      --(1등 player number)
                   elsif winner = 1 then
                      data <= "00010";
                   elsif winner = 2 then
